@@ -1,0 +1,54 @@
+local Node = {}
+
+function Node:new()
+    node = {}
+    setmetatable( node, self )
+    self.__index = self
+    node:init()
+    return node
+end
+
+function Node:init()
+    self.val = nil
+    self.next = nil
+end
+
+function Node:setVal( val )
+    self.val = val
+end
+
+function Node:printVal()
+    io.write( self.val .. ' ' )
+end
+
+function Node:hasNext()
+    if self.next then
+        return true
+    else
+        return false
+    end
+end
+
+function Node:initNext()
+    self.next = Node:new()
+end
+
+function Node:moveToNext()
+    return self.next
+end
+
+head = Node:new()
+temp = head
+
+print( 'List length = 10' )
+for i = 1, 10 do
+    temp:setVal( i )
+    temp:initNext()
+    temp = temp:moveToNext()
+end
+
+temp = head
+while temp:hasNext() do
+    temp:printVal()
+    temp = temp:moveToNext()
+end

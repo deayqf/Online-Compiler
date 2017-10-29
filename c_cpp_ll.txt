@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+struct Node
+{
+    int val;
+    Node* next;
+    void setVal( int val )
+    {
+        this->val = val;
+    }
+    bool hasNext()
+    {
+        if( this->next )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    void initNext()
+    {
+        this->next = new Node();
+    }
+    Node* moveToNext()
+    {
+        return this->next;
+    }
+    void printVal()
+    {
+        printf( "%d", this->val );
+    }
+};
+
+struct List
+{
+    int len;
+    Node* head;
+    List( int len ) : len( len ), head( new Node() )
+    {
+        Node* temp = head;
+        for( int i = 0; i < len; i++ )
+        {
+            temp->setVal( i );
+            temp->initNext();
+            temp = temp->moveToNext();
+        }
+    }
+    ~List()
+    {
+        Node* temp;
+        while( head )
+        {
+            temp = head;
+            head = head->moveToNext();
+            delete temp;
+        }
+        delete head;
+    }
+    void printList()
+    {
+        printf( "List length = %d\n", len );
+        Node* temp = head;
+        while( temp->hasNext() )
+        {
+            temp->printVal();
+            temp = temp->moveToNext();
+        }
+        printf( "\n" );
+    }
+};
+
+int main( void )
+{
+    List* list = new List( 10 );
+    list->printList();
+    list->~List();
+    return 0;
+}

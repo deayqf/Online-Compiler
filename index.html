@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exploration 3</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="device-width, initial-scale=1, shrink-to-fit=no" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-Xqcy5ttufkC3rBa8EdiAyA1VgOGrmel2Y+wxm4K3kI3fcjTWlDWrlnxyD6hOi3PF" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">David Auger Exploration 3</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Themes
+                            <span class="caret"></span>
+                        </a>
+                        <ul id="themes" class="dropdown-menu">
+                            <li><a href="#" title="monokai">Monokai</a></li>
+                            <li><a href="#" title="dracula">Dracula</a></li>
+                            <li><a href="#" title="cobalt">Cobalt</a></li>
+                            <li><a href="#" title="xcode">Xcode</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Languages
+                            <span class="caret"></span>
+                        </a>
+                        <ul id="langs" class="dropdown-menu">
+                            <li><a href="#" title="c_cpp">C/C++</a></li>
+                            <li><a href="#" title="python">Python</a></li>
+                            <li><a href="#" title="lua">Lua</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 id="term_head" class="panel-title"></h3>
+                    </div>
+                    <div id="term_body" class="panel-body">
+                        <div id="editor" class="code" type="text"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="btn-group">
+                            <button class="btn btn-info" onclick="sendToCompiler()">Run</button>
+                            <div class="btn-group">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Examples<span class="caret"></span></button>
+                                <ul id="examples" class="dropdown-menu">
+                                    <li><a href="#" title="_hw">Hello, World</a></li>
+                                    <li><a href="#" title="_fac">Factorial</a></li>
+                                    <li><a href="#" title="_ll">Linked List</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-success" onclick="saveCode()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 id="out_head" class="panel-title"></h3>
+                    </div>
+                    <div id="out_body" class="panel-body">
+                        <div id="output"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-info" onclick="clearOutput()">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="scripts.js"></script>
+    </body>
+</html>

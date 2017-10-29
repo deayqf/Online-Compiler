@@ -1,0 +1,10 @@
+def main():
+    print( 'Hello, World from Python' )
+    for_loop( 10 )
+
+def for_loop( num ):
+    for i in range( num ):
+        print( i )
+
+if __name__ == '__main__':
+    main()

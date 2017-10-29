@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main( void )
+{
+    unsigned int n = 12;
+    unsigned long long factorial = 1;
+
+    for( int i = 1; i <= n; ++i )
+    {
+        factorial *= i;
+    }
+
+    cout << "The Factorial of " << n << " = " << factorial << endl;
+    return 0;
+}
+
